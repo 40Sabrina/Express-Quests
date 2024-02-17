@@ -13,12 +13,12 @@ app.get("/api/movies", movieControllers.getMovies);
 app.get("/api/movies/:id", movieControllers.getMovieById);
 app.post("/api/movies", validateMovie, movieControllers.postMovie);
 app.put("/api/movies/:id", validateMovie, movieControllers.updateMovie);
-app.delete("api/movies/:id", validateMovie, movieControllers.deleteMovie);
+app.delete("/api/movies/:id", movieControllers.deleteMovie);
 
 app.get("/api/users", users.getUsers);
 app.get("/api/users/:id", users.getUsersById);
 app.post("/api/users", validateUser, users.postUser);
 app.put("/api/users/:id", validateUser, users.updateUser);
-app.delete("api/users/:id", validateUser, users.deleteUser);
+app.delete("/api/users/:id", users.deleteUser);
 
 module.exports = app;

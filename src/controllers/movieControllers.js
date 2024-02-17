@@ -100,7 +100,7 @@ const deleteMovie = (req, res) => {
   const id = parseInt(req.params.id);
 
   database
-    .query("delete movie set id = ?", [id])
+    .query("delete from movies where id = ?", [id])
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
